@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project AngularJS</title>
+
+    <!-- Load Css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+
+
+</head>
+
+<body ng-app="employeeApp">
+    <div ng-controller="employeeController">
+
+        <div class="container">
+            <div class = "center">
+                <div class="jumbotron">
+                    <div class="row">
+                        <h1 class="text-center center">Employee Record</h1>
+                    </div>
+                    <div class="center emp-details">
+                        
+                        <div>
+                            <label><strong>Customer Key</strong></label>
+                            <input type="text" value="{{employee.CustomerKey}}"/>
+                        </div>
+    
+                        <div>
+                            <label><strong>Prefix</strong></label>
+                            <input type="text" value="{{employee.Prefix}}"/>
+                        </div>
+                        <div>
+                            <label><strong>First Name</strong></label>
+                            <input type="text" value="{{employee.FirstName}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Last Name</strong></label>
+                            <input type="text" value="{{employee.LastName}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Date of Birth </strong></label>
+                            <input type="text" value="{{employee.BirthDate}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Marital Status</strong></label>
+                            <input type="text" value="{{employee.MaritalStatus}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Gender</strong></label>
+                            <input type="text" value="{{employee.Gender | filterGender }}"/>
+                        </div>
+                        <div>
+                            <label><strong>Email Address</strong></label>
+                            <input type="text" value="{{employee.EmailAddress}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Annual Income</strong></label>
+                            <input type="text" value="{{employee.AnnualIncome}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Total Children</strong></label>
+                            <input type="text" value="{{employee.TotalChildren}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Education Level</strong></label>
+                            <input type="text" value="{{employee.EducationLevel}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Occupation</strong></label>
+                            <input type="text" value="{{employee.Occupation}}"/>
+                        </div>
+                        <div>
+                            <label><strong>Home Owner</strong></label>
+                            <input type="text" value="{{employee.HomeOwner}}"/>
+                        </div>
+                        
+    
+                    </div>
+    
+    
+    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!-- load scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/employee.js"></script>
+</body>
+
+</html>

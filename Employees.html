@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project AngularJS</title>
+
+    <!-- Load Css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body ng-app="employeeApp">
+    <div ng-controller="employeesController" >
+        <div class="container" py-3>
+            <div class = "center">
+                <div class="jumbotron">
+
+                    <h1 class="text-center">Employee Records</h1>
+                    <p class="text-center">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta praesentium optio, tenetur omnis
+                        esse eligendi mollitia sint beatae suscipit commodi vero labore quia perferendis necessitatibus
+                        voluptas tempora inventore. Nisi, voluptatibus.
+                    </p>
+    
+    
+                    <div class="row filter-row center">
+                        <div>
+                            <label><strong>Rows to display</strong></label>
+                            <div class="d-block project-input-field">
+                                <input type="number" step="1" min="0" max="500" ng-model="rowLimit" />
+        
+                            </div>
+                        </div>                     
+                        <div>
+                            <label><strong>Select Column To Sort</strong></label>
+                            <div class="d-block">
+                                <select ng-model="sortColumn" class="project-input-field">
+                                    <option value="BirthDate">Date Of Birth ASC </option>
+                                    <option value="-BirthDate">Date Of Birth DESC </option>
+                                    <option value="AnnualIncome">Salary ASC </option>
+                                    <option value="-AnnualIncome">Salary DESC </option>
+                                </select>
+                            </div>    
+                        </div>
+                        <div>
+                            <label><strong>Search By Name</strong></label>
+                            <div class="d-block">
+                                <input type="text" placeholder="Type to search..." ng-model="SearchEmployee" />
+                            </div>
+                        </div>
+                    </div>
+    
+                    
+                    <div class="t-center">
+                        <table> 
+                            <thead>
+                                <!-- <th>Customer Key</th> -->
+                                <th class="hide-project-html-element">Prefix</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Date of Birth</th>
+                                <th class="hide-project-html-element">Marital Status</th>
+                                <th class="hide-project-html-element">Gender</th>
+                                <th class="hide-project-html-element">Email</th>
+                                <th class="hide-project-html-element">Salary</th>
+                                <th class="hide-project-html-element">Total Children</th>
+                                <th class="hide-project-html-element">Education</th>
+                                <th class="hide-project-html-element">Occupation</th>
+                                <th class="hide-project-html-element">Home Owner</th>
+                                <th>Actions</th>
+                            </thead>
+    
+                            <tbody>
+                                <tr
+                                    ng-repeat="employee in employees | limitTo:rowLimit:0 | orderBy:sortColumn | filter:SearchEmployee">
+    
+                                    <td class="hide-project-html-element">{{employee.Prefix}} </td>
+                                    <td>{{employee.FirstName }}</td>
+                                    <td>{{employee.LastName }}</td>
+                                    <td>{{employee.BirthDate | date: "dd/MM/yyyy" }}</td>
+                                    <td class="hide-project-html-element">{{employee.MaritalStatus}}</td>
+                                    <td class="hide-project-html-element">{{employee.Gender}} </td>
+                                    <td class="hide-project-html-element">{{employee.EmailAddress}} </td>
+                                    <td class="hide-project-html-element">{{employee.AnnualIncome}} </td>
+                                    <td class="hide-project-html-element">{{employee.TotalChildren}} </td>
+                                    <td class="hide-project-html-element">{{employee.EducationLevel}} </td>
+                                    <td class="hide-project-html-element">{{employee.Occupation}} </td>
+                                    <td class="hide-project-html-element">{{employee.HomeOwner}} </td>
+                                    <td>
+                                        <a ng-href="{{'/Employee.html?empId=' + employee.CustomerKey}}">Show</a>
+    
+    
+                                    </td>
+    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- load scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/employees.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+
+.center {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+  }
+
+
+table{
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+td {
+border: 2px solid black;
+padding: 5px;
+text-align: center;
+}
+
+th{
+    border: 2px solid black;
+padding: 5px;
+text-align: center;
+
+}
+
+
+.project-input-field {
+    display: block;
+    border-radius: 5px;
+}
+
+.hide-project-html-element{
+    display: none;
+}
+
+.filter-row{
+    margin-bottom: 20px;
+    width: 100%;
+
+}
+
+.filter-row select{
+    height: 30px;
+}
+
+.filter-row > div:nth-of-type(n){
+    margin-right: 60px;
+    
+}
+
+.employee-grid{
+    margin-top: 20px;
+}
+
+.t-center{
+    margin-left: 25%;
+}
+
+.emp-details label{
+width: 250px;
+margin-right: 30px;
+}
+
+.emp-details input{
+    width: 250px;
+
+}
+
